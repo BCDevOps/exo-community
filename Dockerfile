@@ -76,6 +76,9 @@ COPY scripts/wait-for-it.sh /opt/wait-for-it.sh
 RUN chmod 755 /opt/wait-for-it.sh \
     && chown ${EXO_USER}:${EXO_GROUP} /opt/wait-for-it.sh
 
+# OpenShift tweaks
+RUN chgrp -R root ${EXO_APP_DIR}/conf && chmod -R 775 ${EXO_APP_DIR}/conf
+
 EXPOSE 8080
 USER 1001
 
@@ -84,5 +87,3 @@ VOLUME ["/srv/exo"]
 
 ENTRYPOINT ["/opt/exo/start_eXo.sh", "--data", "/srv/exo"]
 
-# OpenShift tweaks
-RUN chgrp -R root ${EXO_APP_DIR}/conf && chmod -R 775 ${EXO_APP_DIR}/conf
