@@ -22,8 +22,8 @@ ENV EXO_DATA_DIR  /srv/exo
 ENV EXO_LOG_DIR   /var/log/exo
 ENV EXO_TMP_DIR   /tmp/exo-tmp
 
-ENV EXO_USER exo
-ENV EXO_GROUP ${EXO_USER}
+ENV EXO_USER 1001
+ENV EXO_GROUP root
 
 # Customise system
 RUN rm -f /bin/sh && ln -s /bin/bash /bin/sh
