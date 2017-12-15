@@ -25,6 +25,8 @@ ENV EXO_TMP_DIR   /tmp/exo-tmp
 ENV EXO_USER 1001
 ENV EXO_GROUP root
 
+RUN echo "EXO_USER is ${EXO_USER} and EXO_GROUP is ${EXO_GROUP}"
+
 # Customise system
 RUN rm -f /bin/sh && ln -s /bin/bash /bin/sh
 
